@@ -6,6 +6,37 @@ import pandas as pd
 import streamlit as st
 
 from scoring import compute_all_vibes, narrative_one_liner
+# --- add near top of app.py (after imports) ---
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+DATA_DIR = BASE_DIR / "data"
+
+shops_path = DATA_DIR / "shops_example.csv"
+poi_path = DATA_DIR / "poi_example.csv"
+
+if not shops_path.exists():
+    import streamlit as st
+    st.error(
+        f"Missing data file: {shops_path}\n\n"
+        "Fix: add 'data/shops_example.csv' to your GitHub repo (case-sensitive) "
+        "and redeploy."
+    )
+    st.stop()
+
+if not poi_path.exists():
+    import streamlit as st
+    st.error(
+        f"Missing data file: {poi_path}\n\n"
+        "Fix: add 'data/poi_example.csv' to your GitHub repo (case-sensitive) "
+        "and redeploy."
+    )
+    st.stop()
+
+# --- replace old reads ---
+import pandas as pd
+shops = pd.read_csv(shops_path)
+poi = pd.read_csv(poi_path)
 
 # -----------------------------------------------------------------------------
 # Streamlit page config
