@@ -140,6 +140,19 @@ with col2:
     wifi_min = st.slider("Min Wi-Fi score (0–5)", 0.0, 5.0, 3.0, 0.5)
 with col3:
     debug_details = st.toggle("Debug: show shop detail sources", value=False)
+with st.sidebar:
+    st.header("Filters")
+    with st.form("filters"):
+        city = st.selectbox("City", sorted(shops["city"].unique()))
+        vibe = st.selectbox(
+            "Vibe",
+            ["Work-Friendly","Aesthetic","Grab-and-Go","Date-Night","Dietary-Friendly","Study-Spot","Family-Friendly"]
+        )
+        gf = st.checkbox("Must have gluten-free options", value=False)
+        wifi_min = st.slider("Min Wi-Fi score", 0.0, 5.0, 3.0, 0.5)
+        debug_details = st.toggle("Debug mode", value=False)
+        submitted = st.form_submit_button("Apply", use_container_width=True)
+    st.caption("Pro tip: try **Date-Night** vs **Work-Friendly** to see different drivers.")
 
 # -----------------------------------------------------------------------------
 # Helpers
