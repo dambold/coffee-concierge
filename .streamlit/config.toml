@@ -1,0 +1,13 @@
+[theme]
+base = "light"
+primaryColor = "#6C5CE7"     # accent (buttons/links)
+backgroundColor = "#FBFBFD"  # subtle off-white
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#1F2533"
+font = "sans serif"
+
+[client]
+toolbarMode = "minimal"
+
+[server]
+headless = true
