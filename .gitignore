@@ -1,0 +1,36 @@
+# ---- Python / build junk
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.envrc
+.venv/
+venv/
+ENV/
+env/
+
+# ---- OS/editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# ---- Streamlit & local secrets
+.env
+.streamlit/secrets.toml
+
+# ---- Logs & caches
+*.log
+.cache/
+.pytest_cache/
+
+# ---- Data you don't want public (if any)
+data/*.parquet
+data/*.feather
+data/private_*.csv
+
+# ---- Jupyter misc (in case you tinker)
+.ipynb_checkpoints/
