@@ -69,7 +69,7 @@ h1, h2, h3 { letter-spacing: 0.2px; }
 # Brand bar
 st.markdown("""
 <div class="cc-brand">
-  <div style="display:flex; align-items:center; gap:10px;">
+  <div style="display:flex; align-items:center; gap:10px; padding-top:50px;">
     <span style="font-weight:700;">Coffee Concierge</span>
     <span style="opacity:0.95;">· find the right vibe</span>
   </div>
