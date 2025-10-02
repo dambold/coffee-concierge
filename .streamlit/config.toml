@@ -1,7 +1,7 @@
 [theme]
 base = "light"
-primaryColor = "#6C5CE7"     # accent (buttons/links)
-backgroundColor = "#FBFBFD"  # subtle off-white
+primaryColor = "#6C5CE7"         # accent for buttons & links
+backgroundColor = "#FBFBFD"      # soft off-white page bg
 secondaryBackgroundColor = "#FFFFFF"
 textColor = "#1F2533"
 font = "sans serif"
@@ -11,3 +11,7 @@ toolbarMode = "minimal"
 
 [server]
 headless = true
+enableCORS = false
+
+[browser]
+gatherUsageStats = false
