@@ -6,6 +6,21 @@ import pandas as pd
 import streamlit as st
 import pydeck as pdk
 import os, streamlit as st, pydeck as pdk
+from pathlib import Path
+import pandas as pd
+import streamlit as st
+
+ROOT = Path(__file__).resolve().parents[1]   # project root
+DATA_DIR = ROOT / "data"
+shops_path = DATA_DIR / "shops_example.csv"
+poi_path = DATA_DIR / "poi_example.csv"
+
+if not shops_path.exists() or not poi_path.exists():
+    st.error("Data files not found. Ensure 'data/shops_example.csv' and 'data/poi_example.csv' are in the repo.")
+    st.stop()
+
+shops = pd.read_csv(shops_path)
+poi = pd.read_csv(poi_path)
 
 def deck_with_basemap(layers, view_state, tooltip=None):
     token = st.secrets.get("MAPBOX_API_KEY") or os.getenv("MAPBOX_API_KEY", "")
