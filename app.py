@@ -42,6 +42,58 @@ poi = pd.read_csv(poi_path)
 # Streamlit page config
 # -----------------------------------------------------------------------------
 st.set_page_config(page_title="Coffee Concierge", page_icon="☕", layout="wide")
+st.markdown("""
+<style>
+/* page padding + nicer headings */
+.block-container { padding-top: 1.5rem; padding-bottom: 2rem; }
+h1, h2, h3 { letter-spacing: 0.2px; }
+
+/* card container */
+.cc-card {
+  border-radius: 16px;
+  border: 1px solid rgba(20,20,33,0.06);
+  background: #fff;
+  box-shadow: 0 6px 20px rgba(20,20,33,0.06);
+  padding: 14px 16px 14px 16px;
+  margin-bottom: 14px;
+}
+
+/* section header inside card */
+.cc-headline {
+  display:flex; align-items:center; gap:8px;
+  font-weight: 700; font-size: 1.1rem; margin: 2px 0 8px 0;
+}
+
+/* vibe score pill */
+.cc-pill {
+  display:inline-flex; align-items:center; gap:6px;
+  background: linear-gradient(135deg, #6C5CE7, #9B5DE5);
+  color:#fff; padding:4px 10px; border-radius:999px; font-size:0.85rem;
+}
+
+/* helper for muted text */
+.cc-muted { color:#5d6b82; }
+
+/* fine print link row */
+.cc-links { display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+
+/* image wrapper to enforce rounded corners */
+.cc-thumb img { border-radius: 12px !important; }
+
+/* button row spacing */
+.cc-actions { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+
+/* small chips for features */
+.cc-chip {
+  display:inline-flex; align-items:center; gap:6px;
+  background:#F3F5F9; color:#334; border:1px solid #E6EAF2;
+  padding:4px 8px; border-radius:999px; font-size:0.78rem; margin-right:6px; margin-bottom:6px;
+}
+
+/* subtle divider */
+.cc-divider { height:1px; background: #EEF1F6; margin: 8px 0 12px 0; }
+</style>
+""", unsafe_allow_html=True)
 
 # If a secret exists, surface it as an env var so services/places.py can see it.
 if "GOOGLE_MAPS_API_KEY" in st.secrets and not os.getenv("GOOGLE_MAPS_API_KEY"):
